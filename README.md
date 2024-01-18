@@ -1,56 +1,9 @@
 For the original tensorflow implementation, check this [repo](https://github.com/microsoft/Deep3DFaceReconstruction).
 
 
-The comparison result with state-of-the-art public 3D face reconstruction methods on the NoW face benchmark is as follows:
-|Rank|Method|Median(mm)    | Mean(mm) | Std(mm) |
-|:----:|:-----------:|:-----------:|:-----------:|:-----------:|
-| 1. | [DECA\[Feng et al., SIGGRAPH 2021\]](https://github.com/YadiraF/DECA)|1.09|1.38|1.18|
-| **2.** | **Deep3DFace PyTorch**|**1.11**|**1.41**|**1.21**|
-| 3. | 	[RingNet [Sanyal et al., CVPR 2019]](https://github.com/soubhiksanyal/RingNet) | 1.21 | 1.53 | 1.31 |
-| 4. | [Deep3DFace [Deng et al., CVPRW 2019]](https://github.com/microsoft/Deep3DFaceReconstruction) | 1.23 | 1.54 | 1.29 |
-| 5. | [3DDFA-V2 [Guo et al., ECCV 2020]](https://github.com/cleardusk/3DDFA_V2) | 1.23 | 1.57 | 1.39 |
-| 6. | [MGCNet [Shang et al., ECCV 2020]](https://github.com/jiaxiangshang/MGCNet) | 1.31 | 1.87 | 2.63 |
-| 7. | [PRNet [Feng et al., ECCV 2018]](https://github.com/YadiraF/PRNet) | 1.50 | 1.98 | 1.88 |
-| 8. | [3DMM-CNN [Tran et al., CVPR 2017]](https://github.com/anhttran/3dmm_cnn) | 1.84 | 2.33 | 2.05 |
-
-For more details about the evaluation, check [Now Challenge](https://ringnet.is.tue.mpg.de/challenge.html) website.
-
-**_A recent benchmark [REALY](https://www.realy3dface.com/) indicates that our method still has the SOTA performance! You can check their paper and website for more details._**
-
-### ● Visual quality
-The pytorch implementation achieves better visual consistency with the input images compare to the original tensorflow version.
-
-<p align="center"> 
-<img src="images/compare.png">
-</p>
-
-### ● Speed
-The training speed is on par with the original tensorflow implementation. For more information, see [here](https://github.com/sicxu/Deep3DFaceRecon_pytorch#train-the-face-reconstruction-network).
-
-## Major changes
-
-### ● Differentiable renderer
-
-We use [Nvdiffrast](https://nvlabs.github.io/nvdiffrast/) which is a pytorch library that provides high-performance primitive operations for rasterization-based differentiable rendering. The original tensorflow implementation used [tf_mesh_renderer](https://github.com/google/tf_mesh_renderer) instead.
-
-### ● Face recognition model
-
-We use [Arcface](https://github.com/deepinsight/insightface/tree/master/recognition/arcface_torch), a state-of-the-art face recognition model, for perceptual loss computation. By contrast, the original tensorflow implementation used [Facenet](https://github.com/davidsandberg/facenet).
-
-### ● Training configuration
-
-Data augmentation is used in the training process which contains random image shifting, scaling, rotation, and flipping. We also enlarge the training batchsize from 5 to 32 to stablize the training process. 
-
-### ● Training data
-
-We use an extra high quality face image dataset [FFHQ](https://github.com/NVlabs/ffhq-dataset) to increase the diversity of training data.
-
-## Requirements
-**This implementation is only tested under Ubuntu environment with Nvidia GPUs and CUDA installed.** But it should also work on Windows with proper lib configures.
-
 ## Installation
 
-别用太高级的显卡
+别用太高级的显卡，A5000不行
 
 1. Clone the repository and set up a conda environment with all dependencies as follows:
 ```
