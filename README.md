@@ -56,6 +56,7 @@ Deep3DFaceRecon_pytorch
 ```
 
 ### Test with custom images
+不需要自行创建文件夹，只有reconstruct自己的图片的时候才需要创建，他有放置好的用于exp的初始图片
 To reconstruct 3d faces from test images, organize the test image folder as follows:
 ```
 Deep3DFaceRecon_pytorch
