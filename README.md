@@ -82,6 +82,8 @@ python test.py --name=<model_name> --epoch=20 --img_folder=./datasets/examples
 当出现ninja: build stopped: subcommand failed.时代表没有OpenGL环境，可以使用--use_opengl False来避免这个报错
 
 Results will be saved into ./checkpoints/<model_name>/results/<folder_to_test_images>, which contain the following files:
+
+可能运行完成后过一会输出文件夹才能显示出来，等一下吧
 | \*.png | A combination of cropped input image, reconstructed image, and visualization of projected landmarks.
 |:----|:-----------|
 | \*.obj | Reconstructed 3d face mesh with predicted color (texture+illumination) in the world coordinate space. Best viewed in Meshlab. |
