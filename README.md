@@ -1,42 +1,5 @@
-## Accurate 3D Face Reconstruction with Weakly-Supervised Learning: From Single Image to Image Set —— PyTorch implementation ##
-
-<p align="center"> 
-<img src="images/example.gif">
-</p>
-
-This is an unofficial official pytorch implementation of the following paper:
-
-Y. Deng, J. Yang, S. Xu, D. Chen, Y. Jia, and X. Tong, [Accurate 3D Face Reconstruction with Weakly-Supervised Learning: From Single Image to Image Set](https://arxiv.org/abs/1903.08527), IEEE Computer Vision and Pattern Recognition Workshop (CVPRW) on Analysis and Modeling of Faces and Gestures (AMFG), 2019. (**_Best Paper Award!_**)
-
-The method enforces a hybrid-level weakly-supervised training for CNN-based 3D face reconstruction. It is fast, accurate, and robust to pose and occlussions. It achieves state-of-the-art performance on multiple datasets such as FaceWarehouse, MICC Florence and NoW Challenge.
-
-
 For the original tensorflow implementation, check this [repo](https://github.com/microsoft/Deep3DFaceReconstruction).
 
-This implementation is written by S. Xu.
-## 04/25/2023 Update
-We updated a new model to improve the results on "closed eye" images. We collected ~2K facial images with closed eyes and included them in the training data. The updated model has similar reconstruction accuracy as the previous one on the benchmarks, but has better results for faces with closed eyes (see below). Here's the [link (google drive)](https://drive.google.com/drive/folders/1grs8J4vu7gOhEClyKjWU-SNxfonGue5F?usp=share_link) to the new model.
-### ● Reconstruction accuracy
-
-|Method|FaceWareHouse|MICC Florence     
-|:----:|:-----------:|:-----------:|
-|Deep3DFace_PyTorch_20230425|1.60±0.44|1.54±0.49|
-
-### ● Visual quality
-<p align="center"> 
-<img src="images/20230425_compare.png">
-</p>
-
-## Performance
-
-### ● Reconstruction accuracy
-
-The pytorch implementation achieves lower shape reconstruction error (9% improvement) compare to the [original tensorflow implementation](https://github.com/microsoft/Deep3DFaceReconstruction). Quantitative evaluation (average shape errors in mm) on several benchmarks is as follows:
-
-|Method|FaceWareHouse|MICC Florence     | NoW Challenge |
-|:----:|:-----------:|:-----------:|:-----------:|
-|Deep3DFace Tensorflow |  1.81±0.50  |  1.67±0.50  | 1.54±1.29 |
-|**Deep3DFace PyTorch** |**1.64±0.50**|**1.53±0.45**| **1.41±1.21** |
 
 The comparison result with state-of-the-art public 3D face reconstruction methods on the NoW face benchmark is as follows:
 |Rank|Method|Median(mm)    | Mean(mm) | Std(mm) |
@@ -86,6 +49,9 @@ We use an extra high quality face image dataset [FFHQ](https://github.com/NVlabs
 **This implementation is only tested under Ubuntu environment with Nvidia GPUs and CUDA installed.** But it should also work on Windows with proper lib configures.
 
 ## Installation
+
+别用太高级的显卡
+
 1. Clone the repository and set up a conda environment with all dependencies as follows:
 ```
 git clone https://github.com/sicxu/Deep3DFaceRecon_pytorch.git
