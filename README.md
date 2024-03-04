@@ -170,21 +170,5 @@ Training logs and model parameters will be saved into ./checkpoints/<custom_expe
 By default, the script uses a batchsize of 32 and will train the model with 20 epochs. For reference, the pre-trained model in this repo is trained with the default setting on a image collection of 300k images. A single iteration takes 0.8~0.9s on a single Tesla M40 GPU. The total training process takes around two days.
 
 To use a trained model, see [Inference](https://github.com/sicxu/Deep3DFaceRecon_pytorch#inference-with-a-pre-trained-model) section.
-## Contact
-If you have any questions, please contact the paper authors.
 
-## Citation
-
-Please cite the following paper if this model helps your research:
-
-	@inproceedings{deng2019accurate,
-	    title={Accurate 3D Face Reconstruction with Weakly-Supervised Learning: From Single Image to Image Set},
-	    author={Yu Deng and Jiaolong Yang and Sicheng Xu and Dong Chen and Yunde Jia and Xin Tong},
-	    booktitle={IEEE Computer Vision and Pattern Recognition Workshops},
-	    year={2019}
-	}
-##
-The face images on this page are from the public [CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) dataset released by MMLab, CUHK.
-
-Part of the code in this implementation takes [CUT](https://github.com/taesungp/contrastive-unpaired-translation) as a reference.
 
