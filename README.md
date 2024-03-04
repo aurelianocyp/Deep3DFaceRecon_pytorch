@@ -29,7 +29,7 @@ cp -r ./insightface/recognition/arcface_torch ./models/
 ## Inference with a pre-trained model
 
 ### Prepare prerequisite models
-1. download "01_MorphableModel.mat". In addition, we use an Expression Basis provided by [Guo et al.](https://github.com/Juyong/3DFace). Download the Expression Basis (Exp_Pca.bin) using this [link (google drive)](https://drive.google.com/file/d/1bw5Xf8C12pWmcMhNEu6PtsYVZkVucEN6/view?usp=sharing). Organize all files into the following structure:
+1. download "01_MorphableModel.mat". Download the Expression Basis (Exp_Pca.bin) using this [link (google drive)](https://drive.google.com/file/d/1bw5Xf8C12pWmcMhNEu6PtsYVZkVucEN6/view?usp=sharing). Organize all files into the following structure:
 ```
 Deep3DFaceRecon_pytorch
 │
