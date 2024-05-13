@@ -80,7 +80,7 @@ python test.py --name=<model_name> --epoch=20 --img_folder=<folder_to_test_image
 python test.py --name=<model_name> --epoch=20 --img_folder=./datasets/examples
 ```
 当出现ninja: build stopped: subcommand failed.时代表没有OpenGL环境，可以使用--use_opengl False来避免这个报错
-
+如果报没有detections文件夹，从next3d里的数据准备里面去获取
 Results will be saved into ./checkpoints/<model_name>/results/<folder_to_test_images>, which contain the following files:
 
 可能运行完成后过一会输出文件夹才能显示出来，等一下吧
@@ -153,19 +153,7 @@ python data_preparation.py --img_folder <folder_to_validation_images> --mode=val
 ```
 The script will generate files of landmarks and skin masks, and save them into ./datasets/<folder_to_training_images>. In addition, it also generates a file containing the path of all training data into ./datalist which will then be used in the training script.
 
-### Train the face reconstruction network
-Run the following script to train a face reconstruction model using the pre-processed data:
-```
-# train with single GPU
-python train.py --name=<custom_experiment_name> --gpu_ids=0
 
-# train with multiple GPUs
-python train.py --name=<custom_experiment_name> --gpu_ids=0,1
-
-# train with other custom settings
-python train.py --name=<custom_experiment_name> --gpu_ids=0 --batch_size=32 --n_epochs=20
-```
-Training logs and model parameters will be saved into ./checkpoints/<custom_experiment_name>. 
 
 By default, the script uses a batchsize of 32 and will train the model with 20 epochs. For reference, the pre-trained model in this repo is trained with the default setting on a image collection of 300k images. A single iteration takes 0.8~0.9s on a single Tesla M40 GPU. The total training process takes around two days.
 
