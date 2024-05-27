@@ -49,7 +49,7 @@ Deep3DFaceRecon_pytorch
 │
 └─── checkpoints
     │
-    └─── <model_name>
+    └─── mymodel
         │
         └─── epoch_20.pth
 
@@ -61,7 +61,7 @@ To reconstruct 3d faces from test images, organize the test image folder as foll
 ```
 Deep3DFaceRecon_pytorch
 │
-└─── <folder_to_test_images>
+└─── images
     │
     └─── *.jpg/*.png
     |
@@ -74,10 +74,10 @@ The \*.jpg/\*.png files are test images. The \*.txt files are detected 5 facial 
 Then, run the test script:
 ```
 # get reconstruction results of your custom images
-python test.py --name=<model_name> --epoch=20 --img_folder=<folder_to_test_images>
+python test.py --name=mymodel--epoch=20 --img_folder=images
 
 # get reconstruction results of example images
-python test.py --name=<model_name> --epoch=20 --img_folder=./datasets/examples
+python test.py --name=mymodel --epoch=20 --img_folder=./datasets/examples
 ```
 当出现ninja: build stopped: subcommand failed.时代表没有OpenGL环境，可以使用--use_opengl False来避免这个报错
 如果报没有detections文件夹，从next3d里的数据准备里面去获取
