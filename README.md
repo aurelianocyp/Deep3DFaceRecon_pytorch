@@ -7,7 +7,7 @@ For the original tensorflow implementation, check this [repo](https://github.com
 
 1. Clone the repository and set up a conda environment with all dependencies as follows:
 ```
-git clone https://github.com/sicxu/Deep3DFaceRecon_pytorch.git
+git clone https://github.com/aurelianocyp/Deep3DFaceRecon_pytorch
 cd Deep3DFaceRecon_pytorch
 conda env create -f environment.yml
 source activate deep3d_pytorch
