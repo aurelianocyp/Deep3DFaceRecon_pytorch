@@ -74,13 +74,15 @@ The \*.jpg/\*.png files are test images. The \*.txt files are detected 5 facial 
 Then, run the test script:
 ```
 # get reconstruction results of your custom images
-python test.py --name=mymodel --epoch=20 --img_folder=images
+python test.py --name=mymodel --epoch=20 --img_folder=images --use_opengl False
 
 # get reconstruction results of example images
-python test.py --name=mymodel --epoch=20 --img_folder=./datasets/examples
+python test.py --name=mymodel --epoch=20 --img_folder=./datasets/examples --use_opengl False
 ```
 当出现ninja: build stopped: subcommand failed.时代表没有OpenGL环境，可以使用--use_opengl False来避免这个报错
+
 如果报没有detections文件夹，从next3d里的数据准备里面去获取
+
 Results will be saved into ./checkpoints/<model_name>/results/<folder_to_test_images>, which contain the following files:
 
 可能运行完成后过一会输出文件夹才能显示出来，等一下吧
