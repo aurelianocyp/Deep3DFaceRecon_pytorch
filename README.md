@@ -74,7 +74,7 @@ The \*.jpg/\*.png files are test images. The \*.txt files are detected 5 facial 
 Then, run the test script:
 ```
 # get reconstruction results of your custom images
-python test.py --name=mymodel--epoch=20 --img_folder=images
+python test.py --name=mymodel --epoch=20 --img_folder=images
 
 # get reconstruction results of example images
 python test.py --name=mymodel --epoch=20 --img_folder=./datasets/examples
